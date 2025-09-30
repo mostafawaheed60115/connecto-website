@@ -6,9 +6,9 @@ import uvicorn
 from db import init_db, get_db_connection
 import logging
 ##define logger
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(level=logging.INFO, filename="app.log", filemode="a", format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
-#define logging function
+#define logging function with a log file
 def log_info(message):
     logger.info(message)
 
