@@ -1,7 +1,20 @@
 // ===============================================
 // GLOBAL TOGGLES + HELPERS (shared across all platforms)
 // ===============================================
+//website loading//
 
+ window.addEventListener("load", () => {
+      setTimeout(() => {
+        const loader = document.getElementById("loading-screen");
+        loader.style.animation = "fadeOut 0.5s ease forwards";
+        setTimeout(() => {
+          loader.style.display = "none";
+          document.querySelector(".app").style.display = "flex";
+        }, 500);
+      }, 2000);
+    });
+
+///////////////////////
 // Sidebar collapse toggle
 document.getElementById("toggleSidebar").onclick = () => {
   document.getElementById("sidebar").classList.toggle("collapsed");
