@@ -8,22 +8,29 @@
   <!-- Chart.js for charts (client-side only) -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   </head>
+
 <body data-bs-theme="light">
+
   <div id="loading-screen">
     <div class="loader"></div>
     <div class="loading-text">Loading your data...</div>
   </div>
+  <header class="main-header">
+  <h1>Demo Dashboard</h1>
+</header>
   <div class="app">
     <!-- Sidebar -->
 <aside class="sidebar" id="sidebar">
-  <div class="brand">
-    <div class="logo"><img src="static/images/black_logo_1.png" alt="connecto"></div>
-    <div>
-      <h1>Seller Dashboard</h1>
-      <div class="muted" style="font-size:12px">Demo — Amazon & noon</div>
-    </div>
-    <button id="toggleSidebar" class="collapse-btn">☰</button>
+<div class="brand">
+  <div class="logo"><img src="static/images/black_logo_1.png" alt="connecto"></div>
+  <div>
+    <h1>Seller Dashboard</h1>
   </div>
+  <div class="actions">
+    <button id="toggleSidebar" class="collapse-btn">☰</button>
+    <button id="toggleDark" class="collapse-btn">🌙</button>
+  </div>
+</div>
 
   <!-- Amazon -->
   <div class="category">
@@ -55,6 +62,21 @@
       <button class="item-btn" data-cat="noon" data-item="performance">Performance</button>
     </div>
   </div>
+  <!-- Trendyol -->
+  <div class="category">
+    <button class="cat-btn" data-cat="trendyol">
+      <i class="icon">🛍️</i><span>Trendyol</span>
+      <span class="caret" id="trendyol-caret">▸</span>
+    </button>
+    <div class="cat-items" id="trendyol-items">
+      <button class="item-btn" data-cat="trendyol" data-item="overview">Overview</button>
+      <button class="item-btn" data-cat="trendyol" data-item="sales">Sales</button>
+      <!-- <button class="item-btn" data-cat="trendyol" data-item="revenue">Revenue</button>
+      <button class="item-btn" data-cat="trendyol" data-item="products">Products</button>
+      <button class="item-btn" data-cat="trendyol" data-item="performance">Performance</button>
+      <button class="item-btn" data-cat="trendyol" data-item="advertising">Advertising</button> -->
+    </div>
+  </div>
 
   <hr />
   <div style="font-size:13px;color:var(--muted)">
@@ -84,6 +106,8 @@
   <script src="static/js/noon_data.js"></script>
   <script src="static/js/amazon_functions.js"></script>
   <script src="static/js/noon_functions.js"></script>
+  <script src="static/js/trendyol_functions.js"></script>
+  <script src="static/js/trendyol_data.js"></script>
 </body>
 </html>
   
