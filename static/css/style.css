@@ -763,6 +763,7 @@ h6 {
             transform: translateX(0);
   }
 }
+/* Hero start*/
 .hero__v6 {
   padding: 10rem 0 !important;
 }
@@ -799,6 +800,17 @@ h6 {
 .hero__v6 .logos img {
   width: 200px;
 }
+.hero__v6 .logos {
+  text-align: center;
+  margin-top: 3rem;
+  justify-content: center;
+}
+
+.hero__v6 .logos-slider {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
 .hero__v6 .hero-img {
   position: relative;
 }
@@ -828,7 +840,40 @@ h6 {
     max-width:600px;
   }
 }
+.hero__v6 .logos-slider {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
 
+/* Track of logos that moves */
+.hero__v6 .logos-track {
+  display: flex;
+  gap: 40px;
+  width: max-content; /* makes sure it doesn't shrink */
+  animation: swapLogos 6s ease-in-out infinite alternate;
+  justify-content: center; /* keeps centered */
+}
+
+/* Logos inside */
+.hero__v6 .logos-track img {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(20%);
+  transition: filter 0.3s ease;
+}
+
+.hero__v6 .logos-track img:hover {
+  filter: grayscale(0);
+}
+
+/* Keyframes for infinite scrolling */
+/* @keyframes scrollLogos {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+} */
+/* Hero end*/
 .features__v2 .icon {
   width: 60px;
   height: 60px;
@@ -874,17 +919,17 @@ h6 {
 }
 .about__v4 .mission-statement {
   /* background-color: var(--bs-primary); */
-  background-color: var(--bs-secondary-rgb);
+  background-color: rgba(var(--bs-secondary-rgb), 0.2);
   position: relative;
   bottom: -20px;
   width: 100%;
 }
 .about__v4 .mission-statement h3 {
   font-size: 10px;
-  color: var(--bs-secondary);
+  color: black;
 }
 .about__v4 .mission-statement p {
-  color: var(--bs-white);
+  color: var(--bs-black);
 }
 .about__v4 .mission-icon {
   width: 50px;
@@ -894,7 +939,7 @@ h6 {
           flex: 0 0 50px;
   line-height: 50px;
   display: inline-block;
-  background-color: rgba(var(--bs-secondary-rgb), 0.1);
+  background-color: black;
 }
 .about__v4 .mission-icon i {
   color: var(--bs-secondary);

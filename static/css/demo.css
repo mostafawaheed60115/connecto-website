@@ -84,7 +84,22 @@ body.dark {
   --card-hover-bg: #2a2a2a;
   --shadow: 0 2px 6px rgba(0,0,0,0.35);
 }
-
+.main-header {
+  width: 100%;
+  padding: 8px 8px;
+  background: var(--bs-primary, #222); /* fallback if variable not set */
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  position: sticky;  /* stays visible when scrolling */
+  top: 0;
+  z-index: 800;
+  text-align: center;
+  justify-content: center;
+  height: 50px;
+}
 /* ===============================================
    LAYOUT
    =============================================== */
@@ -115,7 +130,6 @@ html,body {
   position: relative;
   box-shadow: var(--shadow);
 }
-.sidebar.collapsed { width: 70px; }
 .sidebar.collapsed .brand h1,
 .sidebar.collapsed .muted,
 .sidebar.collapsed .cat-btn span:not(.caret),
@@ -136,10 +150,19 @@ html,body {
 
 /* Brand section */
 .brand {
-  display:flex;
-  align-items:center;
-  gap:12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* separate logo+title from actions */
+  gap: 12px;
   margin-bottom: 18px;
+}
+.brand .actions {
+  display: flex;
+  gap: 6px;
+  margin-left: auto;
+}
+.sidebar.collapsed .brand .actions {
+  display: flex !important;
 }
 /* .brand .logo {
   width:44px;height:44px;border-radius:8px;
@@ -209,11 +232,11 @@ html,body {
    CONTENT AREA
    =============================================== */
 .content {
-  padding: 20px;
-  overflow-y: auto;
-  padding-left: 70px;
-  box-sizing: border-box;
-  position: relative;
+  min-height: 100vh;       /* fill full height */
+  width: 100%;             /* take all available width */
+  box-sizing: border-box;  /* padding doesn’t break layout */
+  overflow: auto;          /* allow scroll if content is taller */
+  padding: 20px;           /* optional spacing */
 }
 
 /* Quick context actions (chips) */
