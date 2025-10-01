@@ -15,19 +15,15 @@
     });
 
 ///////////////////////
-// Sidebar collapse toggle
-document.getElementById("toggleSidebar").onclick = () => {
+document.getElementById("toggleSidebar").addEventListener("click", () => {
+  console.log("Sidebar button clicked!");
   document.getElementById("sidebar").classList.toggle("collapsed");
-};
+});
 
-// Dark mode toggle
-const toggleDark = document.createElement("button");
-toggleDark.innerText = "🌙";
-toggleDark.className = "collapse-btn";
-document.querySelector(".brand").appendChild(toggleDark);
-toggleDark.onclick = () => {
+document.getElementById("toggleDark").addEventListener("click", () => {
+  console.log("Dark mode button clicked!");
   document.body.classList.toggle("dark");
-};
+});
 
 // ---------- Shared Helper Functions ----------
 function clearMainContent() {
@@ -116,6 +112,10 @@ document.querySelectorAll('.item-btn').forEach(it => {
         else if (item === 'revenue') renderNoonRevenue();
         else if (item === 'reputation') renderNoonReputation();
         else if (item === 'performance') renderNoonPerformance();
+      else renderSimple(platform, item);
+    } else if (platform === 'trendyol') {
+      if (item === 'overview') renderTrendyolOverview();
+      else if (item === 'sales') renderTrendyolSales();
       else renderSimple(platform, item);
     } else {
       renderSimple(platform, item);
